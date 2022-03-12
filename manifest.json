@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "myDATA timologio Login",
+  "version": "0.0.0.1",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "description": "Manages passwords for myDATA.",
+  "icons": {
+    "16": "ico/my_16.png",
+    "48": "ico/my_48.png",
+    "128": "ico/my_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.aade.gr/saadeapps2/bookkeeper-web/bookkeeper/*"
+      ],
+      "css": [
+        "bookkeeper.css"
+      ],
+      "js": [
+        "bookkeeper.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://mydata.aade.gr/timologio/Account/Login*"
+      ],
+      "js": [
+        "timologio.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "*://*.aade.gr/saadeapps2/bookkeeper-web/bookkeeper/*",
+    "*://mydata.aade.gr/timologio/Account/Login*"
+  ],
+  "permissions": [
+    "storage"
+  ]
+}
